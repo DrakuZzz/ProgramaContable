@@ -1,0 +1,291 @@
+/* Variables de colores pasteles */
+:root {
+    --color-primary: #A8DADC;
+    --color-secondary: #F1FAEE;
+    --color-accent: #457B9D;
+    --color-background: #FAF9F6;
+    --color-text: #2B2D42;
+    --color-success: #9AE19D;
+    --color-warning: #FFE6A7;
+    --color-error: #F4ACB7;
+    --color-border: #E5E5E5;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --radius: 8px;
+}
+
+/* Estilos generales */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.6;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4 {
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.2rem;
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2A5C79;
+    text-decoration: underline;
+}
+
+/* Formularios */
+form {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+select:focus {
+    outline: none;
+    border-color: var(--color-accent);
+}
+
+/* Botones */
+button,
+input[type="submit"] {
+    background-color: var(--color-accent);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background-color: #2A5C79;
+}
+
+button.cancelBtn {
+    background-color: var(--color-error);
+}
+
+button.cancelBtn:hover {
+    background-color: #D6808F;
+}
+
+/* Tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    background-color: white;
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+th {
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* Contenedores */
+.container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.caja {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.caja input, 
+.caja select {
+    flex: 1;
+    min-width: 150px;
+}
+
+/* Utilidades */
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .caja {
+        flex-direction: column;
+    }
+    
+    .caja input, 
+    .caja select {
+        width: 100%;
+    }
+    
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+/* Estados */
+input:read-only {
+    background-color: var(--color-secondary);
+    cursor: not-allowed;
+}
+
+/* Estilos específicos para elementos */
+#detallesContainer div {
+    background-color: var(--color-secondary);
+    padding: 1rem;
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+    border: 1px solid var(--color-border);
+}
+
+#detallesContainer select,
+#detallesContainer input {
+    margin-bottom: 0.5rem;
+}
+
+/* Estilos para la vista de transacciones */
+#Cuentas, #Asiento, #Facturas {
+    margin-bottom: 2rem;
+}
+
+/* Estilos para el balance de facturas */
+#Facturas table table {
+    box-shadow: none;
+    margin-bottom: 0;
+}
+
+#Facturas table table td {
+    padding: 0.25rem 0.5rem;
+}
+
+/* Mensajes de alerta */
+.alert {
+    padding: 1rem;
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.alert-success {
+    background-color: var(--color-success);
+    color: #1a472a;
+}
+
+.alert-error {
+    background-color: var(--color-error);
+    color: #7f1d1d;
+}
+
+.alert-warning {
+    background-color: var(--color-warning);
+    color: #78350f;
+}
+
+/* Campos requeridos con asterisco */
+.required:after {
+    content: " *";
+    color: var(--color-error);
+}
+
+/* Estilos para inputs de tipo número con spinner */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    opacity: 1;
+    margin-left: 5px;
+}
